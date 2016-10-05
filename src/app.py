@@ -6,7 +6,7 @@ __author__ = 'Qingyun Wu'
 
 app = Flask(__name__)
 app.config.from_object('src.config')
-app.secret_key = "123"
+app.secret_key = "qingyun"
 
 
 @app.before_first_request

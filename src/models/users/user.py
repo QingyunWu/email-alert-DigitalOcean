@@ -55,7 +55,7 @@ class User(object):
             raise UserErrors.UserAlreadyRegisteredError("The e-mail you used to register already exists.")
         if not Utils.email_is_valid(email):
             raise UserErrors.InvalidEmailError("The e-mail does not have the right format.")
-
+        # double hash the pw then save to mongo
         User(email, Utils.hash_password(password)).save_to_db()
 
         return True
